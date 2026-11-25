@@ -1016,26 +1016,3 @@ if (navbar) {
   }, { threshold: 0.12 });
   io.observe(sec);
 })();
-
-
-
-
-const bgMusic = new Audio('bgmusic/music.mp3');
-bgMusic.loop = true;
-bgMusic.volume = 0.2;
-
-window.addEventListener('DOMContentLoaded', () => {
-  // 1. Attempt to play immediately on load
-  bgMusic.play().catch(() => {
-    // 2. If blocked by the browser, wait for the first user interaction
-    const startAudioOnInteraction = () => {
-      bgMusic.play();
-      // Remove listeners once the music starts
-      document.removeEventListener('click', startAudioOnInteraction);
-      document.removeEventListener('keydown', startAudioOnInteraction);
-    };
-
-    document.addEventListener('click', startAudioOnInteraction);
-    document.addEventListener('keydown', startAudioOnInteraction);
-  });
-});

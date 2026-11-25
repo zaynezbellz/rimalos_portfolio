@@ -1,4 +1,4 @@
- const bgMusic = new Audio('bgmusic/music.mp3');
+const bgMusic = new Audio('bgmusic/music.mp3');
 bgMusic.loop = true;
 bgMusic.volume = 0.2;
 
